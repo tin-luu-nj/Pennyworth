@@ -1,0 +1,6 @@
+.vscode/
+Alfred/
+config/private_cfg.yml
+generated/
+*.log
+__pycache__

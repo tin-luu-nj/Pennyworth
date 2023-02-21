@@ -1,0 +1,131 @@
+### @brief Alfred Configuration for Application ###
+
+################################################################################
+# @file Alfred.yml
+#
+# @brief This file describes the setting to be used by the application.
+#
+# @section Description
+# Defines setting to be used by the application
+# - Discord Bot
+# - Manga Feed
+#
+# @section Libraries/Modules
+# - None
+#
+# @section NOTE
+# - This file contains user-related information
+#
+# @section TODO
+# - None
+#
+# @section Change History
+# Example description:
+# Version Y/M/D       Author      Change description
+# 1.0.0   2022-01-22  Tin Luu     Initial Version
+#
+# Copyright (c) 2022 Pennyworth Project.  All rights reserved.
+################################################################################
+
+##
+# Version of private config
+##
+version: 1.0.0
+
+discord:
+  # Configuration for Discord Bot
+  bot:
+    # Guild at https://discord.com/channels/841707468928581642
+    command_prefix: "!"
+    guild: TheNest
+    guildid: 841707468928581642
+    channels:
+      - server
+      - manga-feed
+    id: 931809914559533096
+
+  # Configuration for Cogs loaded by Discord Bot
+  cog:
+    basicSlashCommand:
+      enable: True
+    # reserved
+    basicListener:
+      enable: True
+    # Configuration for Web Scraper Cog
+    webScraper:
+      manga_feed: ${webscraper.mangafeed}
+      # To en/disable Web Scraper Cog
+      enable: True
+      # reserved
+      loop:
+        interval:
+          hours:
+            manga4life: 0.5
+            saleprice: 6
+    # Configuration for notification Cog
+    notification:
+      enable: True
+      # Configuration for mainFunction of notification
+      mainFunction:
+        check: True
+        notify: False
+        validate: True
+        shutdown: True
+      loop:
+        interval:
+          seconds:
+            check: 5
+            notify: 5
+            validate: 5
+            shutdown: 0.01
+      shutdown:
+        # Reserved
+        slashCommand: False
+        command: shutdown
+        keyboard_signal:
+          enable: True
+          press: 'q'
+
+##
+# Setting for PushOver
+##
+pushover:
+  request:
+    http: api.pushover.net:443
+    method: POST
+    api: /1/messages.json
+    content: application/x-www-form-urlencoded
+
+webscraper:
+  mangafeed: True
+
+diagnostic:
+  logging:
+    handler:
+      stream:
+        enable: True
+        level: DEBUG
+      file:
+        enable: True
+        level: INFO
+  DTC:
+    enable: True
+    # relativeCreated, asctime
+    timestamp: None
+    level: WARNING
+    log: True
+
+##
+# Setting for File
+##
+file:
+  notification:
+    manga: "./notification/manga-feed.yml"
+  database:
+    wishlist: ./database/buy_wishlist.yml
+    manga: ./database/Manga4Life_feed_db.yml
+  log: ./log/Dx.log
+  dtc: ./log/DTC.log
+################################################################################
+# END OF FILE
+################################################################################

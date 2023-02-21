@@ -1,0 +1,57 @@
+cellphones:
+- id: iphone-14-pro-max
+  name: "iPhone 14 Pro Max 128GB | Ch\xEDnh h\xE3ng VN/A"
+  percentage: 99.3%
+  price:
+  - 2023-02-20_21-36-07: 28490000
+  - 2023-02-23_17-17-31: 28390000
+  - 2023-03-04_20-17-26: 28190000
+  update: false
+- id: samsung-galaxy-z-fold-4
+  name: Samsung Galaxy Z Fold4
+  percentage: 111.77%
+  price:
+  - 2023-02-20_21-36-08: 35990000
+  - 2023-02-23_22-39-56: 33990000
+  - 2023-03-04_20-17-26: 37990000
+  update: false
+- id: samsung-galaxy-z-flip-4
+  name: Samsung Galaxy Z Flip4 128GB
+  percentage: 105.27%
+  price:
+  - 2023-02-20_21-36-09: 18990000
+  - 2023-03-04_20-17-27: 19990000
+  update: false
+gearvn:
+- id: gvn-phantom-plus-a3070ti
+  name: GVN PHANTOM Plus a3070Ti
+  percentage: 98.9%
+  price:
+  - 2023-02-20_21-36-05: 46000000
+  - 2023-02-21_19-58-02: 45500000
+  - 2023-03-04_20-17-23: 45000000
+  update: false
+- id: gvn-phantom-plus-i3070
+  name: GVN PHANTOM Plus i3070 WHITE
+  percentage: 100%
+  price:
+  - 2023-02-20_21-36-05: 50000000
+  update: false
+- id: vga-gigabyte-geforce-rtx-3070-vision-oc-8g
+  name: GIGABYTE GeForce RTX 3070 VISION OC 8G (rev 2.0)
+  percentage: 1005.81%
+  price:
+  - 2023-02-20_21-36-05: 15590000
+  update: false
+- id: micro-kingston-hyperx-quadcast-s-white
+  name: Micro Kingston HyperX QuadCast S White
+  percentage: 100%
+  price:
+  - 2023-02-20_21-36-06: 3390000
+  update: false
+- id: macbook-air-2020-m1-8gpu-8gb-512gb-mgna3sa-a-silver
+  name: MacBook Air M1 8GPU 8GB 512GB - Silver
+  percentage: 100%
+  price:
+  - 2023-02-24_21-39-54: 27990000
+  update: false
