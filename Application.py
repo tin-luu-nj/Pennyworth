@@ -43,7 +43,7 @@ def main() -> None:
     @param  None.
     @return  None.
     """
-
+    print("[INFO] Current version: 1.0.0")
     try:
         # Declare object
         Alfred = DiscordBot(
