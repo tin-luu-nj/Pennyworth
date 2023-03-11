@@ -4,32 +4,31 @@ import sys
 from generated.DTC import *
 from src.pyAbstract.generic import DEM
 
+from git.repo import Repo
+
+repo = Repo("./")
 
 def _git_get_current_branch():
-    current_branch = subprocess.check_output(["git", "branch", "--show-current"])
-    return current_branch.decode("utf-8")[:-1]
-
+    branch=repo.active_branch
+    return branch.name
 
 def _git_get_number_of_ahead_behind_commit():
-    commit_number = subprocess.check_output(
-        [
-            "git",
-            "rev-list",
-            "--left-right",
-            "--count",
-            "master...remotes/Pennyworth/master",
-        ]
-    )
-    return [int(i) for i in commit_number.decode("utf-8")[:-1].split("\t")]
-
+    commits_behind = repo.iter_commits('master..origin/master')
+    commits_ahead = repo.iter_commits('origin/master..master')
+    count_behind = sum(1 for c in commits_behind)
+    count_ahead = sum(1 for c in commits_ahead)
+    return [count_behind, count_ahead]
 
 def _git_fetch():
-    subprocess.check_call(["git", "fetch"])
+    repo.remotes.origin.fetch() 
 
 
 def _git_pull():
-    subprocess.check_call(["git", "pull"])
+    repo.remotes.origin.pull() 
 
+
+def _git_reset():
+    repo.git.reset('--hard')
 
 def _install_requirement():
     subprocess.check_call(
@@ -40,6 +39,7 @@ def _install_requirement():
 def update():
     branch = _git_get_current_branch()
     if "master" == branch:
+        _git_reset()
         _git_pull()
         _install_requirement()
 
