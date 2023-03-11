@@ -78,6 +78,7 @@ discord:
             notify: 5
             validate: 5
             shutdown: 0.01
+            update: 1
       shutdown:
         # Reserved
         slashCommand: False
@@ -85,6 +86,8 @@ discord:
         keyboard_signal:
           enable: True
           press: 'q'
+      restart:
+        command: restart
 
 ##
 # Setting for PushOver
@@ -120,12 +123,12 @@ diagnostic:
 ##
 file:
   notification:
-    manga: "./notification/manga-feed.yml"
+    manga: "./database/manga-feed.yml"
   database:
     wishlist: ./database/buy_wishlist.yml
     manga: ./database/Manga4Life_feed_db.yml
-  log: ./log/Dx.log
-  dtc: ./log/DTC.log
+  log: ./database/Dx.log
+  dtc: ./database/DTC.log
 ################################################################################
 # END OF FILE
 ################################################################################
