@@ -86,6 +86,7 @@ class clsCogNotification(commands.Cog):
         self._MainFunction_Notify.start()
         self._MainFunction_Validate.start()
         self._MainFunction_Shutdown.start()
+        self._MainFunction_UpdateCheck.start()
         DEM.set_event_status(DEM_EVENT_DISCORD_COG_NOTIFICATION_INIT)
 
     def cog_load(self) -> None:
